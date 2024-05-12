@@ -1,5 +1,3 @@
-Got it! Here's a README file for your "E-Commerce-Backend" repository:
-
 ---
 
 # E-Commerce Backend
@@ -37,19 +35,15 @@ To set up the "E-Commerce Backend" locally, follow these steps:
 
 4. Set up the database:
    - Create a `.env` file in the project root directory.
-   - Add your database connection URL to the `.env` file:
 
      ```
-     DATABASE_URL=<your_database_connection_url>
+     PORT=5000
+     MONGO_URI=mongodb://127.0.0.1:27017
+     JWT_SECRET=your jwt secret
      ```
 
-5. Run database migrations:
 
-   ```bash
-   npm run migrate
-   ```
-
-6. Start the server:
+5. Start the server:
 
    ```bash
    npm start
@@ -65,6 +59,8 @@ To set up the "E-Commerce Backend" locally, follow these steps:
   - `POST /api/products`: Add a new product.
   - `PUT /api/products/:id`: Update a product.
   - `DELETE /api/products/:id`: Delete a product.
+  - `POST /api/products/top`: get top Products.
+  - `POST /api/products/new`: get new Products.
 
 - **Categories**:
   - `GET /api/categories`: Retrieve all categories.
@@ -76,33 +72,16 @@ To set up the "E-Commerce Backend" locally, follow these steps:
 - **Users**:
   - `POST /api/users/register`: Register a new user.
   - `POST /api/users/login`: User login.
+  - `POST /api/users/logout`: User logout.
+  - `GET /api/users/profile`: get current user profile.
+  - `PUT /api/users/profile`: update current user profile.
 
 - **Orders**:
-  - `GET /api/orders`: Retrieve all orders.
+  - `GET /api/orders/mine`: Retrieve all orders.
   - `GET /api/orders/:id`: Retrieve a specific order.
+  - `GET /api/orders./:id`:get order by Id.
   - `POST /api/orders`: Place a new order.
-
-### Authentication
-
-Protected routes require a valid JWT token. Include the token in the `Authorization` header of your requests:
-
-```
-Authorization: Bearer <your_access_token>
-```
 
 ## Contributing
 
-Contributions to the "E-Commerce Backend" are welcome! If you'd like to contribute, please follow these guidelines:
-
-- Fork the repository.
-- Create a new branch for your feature or bug fix.
-- Make your changes and ensure they are well-documented.
-- Submit a pull request detailing your changes.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-Feel free to customize this README further to include any additional details or sections specific to your project. Let me know if you need further assistance!
+Contributions to the "E-Commerce Backend" are welcome!
